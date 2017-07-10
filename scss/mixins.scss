@@ -1,0 +1,48 @@
+
+$tablet-width: 768px;
+$desktop-width: 981px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin pricetag {
+		margin: 10px 0;
+		text-decoration: none;
+		color: black;
+		position: relative;
+		p {
+			position: absolute;
+			margin: 0 auto;
+			width: 100%;
+			bottom: 20%;
+			text-align: center;
+			display: none;
+			font-weight: bold;
+		}
+		&:hover {
+				img {
+				opacity: 0.2;
+				}
+				p {
+					display: block;
+					opacity: 1;
+				}
+			}
+}
+
+@mixin alink {
+	text-decoration: none;
+	color: black;
+	&:hover {
+		text-decoration: underline;		
+	}
+}
